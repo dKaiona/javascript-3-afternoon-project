@@ -40,6 +40,11 @@
 */
 
 function showValues( obj ) {
+ let string = ""
+  for(var key in obj) {
+   string += obj[key]
+   } return string;
+ 
   //Code Here
 }
 
@@ -52,7 +57,13 @@ function showValues( obj ) {
   Write a for in loop that loops over the object and changes any value that is greater than 10 to 0. 
   Return the updated object.
 */
-
+const greaterThan10 = (obj) => {
+  for(let key in obj) {
+    if (obj[key] > 10) {
+      obj[key] = 0
+    }
+  } return obj;
+}
 //Code Here
 
 
@@ -64,7 +75,11 @@ function showValues( obj ) {
   Write a for in loop that loops over the object and changes every value to be itself multipled by 2.
   Return the updated object.
 */
-
+const double = (cars) => {
+  for(let key in cars) {
+     cars[key] = cars[key] * 2
+  } return cars;
+}
 //Code Here
 
 
@@ -78,7 +93,13 @@ function showValues( obj ) {
   If the property name starts with an 'sh', concatenate the value to the string variable.
   By the end of the for in loop, you should have a sentence, return that sentence.
 */
-
+const secrets = (info) => {
+  let theSecret = ''
+  for(let key in info) {
+    if (key.startsWith("sh"))
+    theSecret += info[key]
+  } return theSecret;
+}
 //Code Here
 
 
@@ -109,7 +130,13 @@ function showValues( obj ) {
   Write a function called removePassword that takes in an object.
   Delete the property password and return the object.
 */
-
+const removePassword = (obj) => {
+  for(let key in obj) {
+    if (key === "password") {
+      delete obj[key];
+    }
+  } return obj
+}
 //Code Here
 
 
@@ -128,7 +155,11 @@ var deleteTheBigNumbers = {
 /*
   Write a for in loop that deletes every property from the object deleteTheBigNumbers whose value is greater than 100.
 */
-
+for(var key in deleteTheBigNumbers) {
+  if (deleteTheBigNumbers[key] > 100) {
+    delete deleteTheBigNumbers[key]
+  }
+}     
 //Code Here
 
 
@@ -141,7 +172,13 @@ var deleteTheBigNumbers = {
   If any property name starts with k, delete that property.
   Return the updated object.
 */
-
+const startsWithK = (obj) => {
+  for(let key in obj){
+    if (key.startsWith("k")) {
+      delete obj[key]
+    }
+  } return obj;
+}
 //Code Here
 
 
@@ -156,7 +193,13 @@ var deleteTheBigNumbers = {
 
   (hint: the method includes() may be of use...)
 */
-
+const hiddenTreasure = (obj) => {
+  for(let key in obj) {
+    if (!obj[key].includes("treasure")) {
+      delete obj[key]
+    }
+  } return obj;
+}
 //Code Here
 
 
