@@ -43,7 +43,8 @@ const prices = [15.00, 23.00, 78.00, 34.00, 12.00, 86.00, 12.00, 79.00, 32.00];
   function(element, index, wholeArray){}  Function Form
   (element, index, wholeArray)=>{}    Arrow Form
 */
-let postTaxPrices = prices.map((number, index, arr) =>{ number * 1.07})
+let postTaxPrices = prices.map((number) =>{ number * 1.07})
+console.log(postTaxPrices)
 //Code Here
  // = prices.map(/* Provide Your Callback Here );
 
@@ -63,6 +64,7 @@ const populations = [8175133, 3792621, 2695598, 2100263];
   (runningTotal, curElement, curIndex, wholeArray)=>{} Arrow Form
 */
 let totalPopulation = populations.reduce((runningTotal, curElement) => runningTotal + curElement)
+console.log(totalPopulation)
 //Code Here
  //  = populations.reduce(/* Provide Your Callback Here */)
 
@@ -88,9 +90,10 @@ const monstersInYourPocket = [{"monster":"Bulbabunny","CP":156},{"monster":"Bulb
 
   Use the filter method to return only the monsters that have a CP of over 200.
 */
-let myStrongest = monstersInYourPocket.filter((number, index, arr) => 
+let myStrongest = monstersInYourPocket.filter((number, index, arr) => number["CP"] > 200)
+console.log(myStrongest)
 //Code Here
-let myStrongest // = monstersInYourPocket.filter(/* Provide Your Callback Here */)
+ // = monstersInYourPocket.filter(/* Provide Your Callback Here */) return x.genre.indexOf(genre) > -1;
 
 
 
@@ -106,8 +109,9 @@ const orders = [{"price":15,"tax":0.09},{"price":42,"tax":0.07},{"price":56,"tax
 /*
   Use a higher order method to get all the order totals after adding in the sales tax. Your answer should be an array of numbers, one total for each order.
 */
-
-let orderTotals // Code here
+let orderTotals = orders.map((number) => number["price"] + number['tax'])
+console.log(orderTotals)
+// Code here
 
 
 
@@ -127,6 +131,15 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
   Use a high order method to create to get the sum of bobsTotal.
 */
 
-let bobsTotal //Code Here
 
+let byeBarry = purchases.filter((number ) => { 
+  if (number['owner'] === 'Bob') {
+    return number
+  }
+}) 
+
+let bobsTotal = byeBarry.reduce((runningTotal, curElement) => runningTotal['price'] + curElement['price'])
+console.log(bobsTotal)
+//Code Here
+console.log(byeBarry)
 
