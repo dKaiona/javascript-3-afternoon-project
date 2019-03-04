@@ -49,7 +49,14 @@ var employees = [
     2. If the employee's first name is Lorie, change her department to 'HR'.
     3. Return the updated employee array.
 */
-
+const employeeUpdater = () =>{
+  for(let key in employees) {
+    if (employees.firstName[key] === 'Theo') {
+      delete employees[key]
+    }
+  }
+}
+console.log(employees)
 //Code Here
 
 
